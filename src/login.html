@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <script src="js/login.js" type="module"></script>
 </head>
 <body>
-    <h1>Logga in</h1>
+    <h2>Logga in</h2>
     <form id="loginForm">
         <label for="username">Användarnamn:</label>
         <input type="text" id="username" name="username" required><br>
@@ -16,11 +17,13 @@
     </form>
     <h2>Skapa konto</h2>
     <form id="registerForm">
-        <input type="text" id="username2" placeholder="Användarnamn" required>
-        <input type="password" id="password2" placeholder="Lösenord" required>
-        <button type="submit">Registrera</button>
+        <label for="username2">Användarnamn:</label>
+        <input type="text" id="username2" name="username2" required><br>
+        <label for="password2">Lösenord:</label>
+        <input type="password" id="password2" name="password2" required><br>
+        <button type="submit">Skapa konto</button>
     </form>
 
-    <script src="/src/js/login.js"></script>
+    
 </body>
 </html>
