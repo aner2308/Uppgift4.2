@@ -13,16 +13,21 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
             body: JSON.stringify({ username, password })
         });
 
-        if (response.ok) {
-            // Hantera lyckad inloggning, t.ex. omdirigera till en annan sida
+        let data = await response.json();
+
+        if (response.status === 200) {
+            // Hantera lyckad inloggning
+            const token = data.response.token;
+            console.log(token);
+            localStorage.setItem("token", token);
             window.location.href = "inloggad.html";
         } else {
-            // Hantera misslyckad inloggning, t.ex. visa ett felmeddelande
+            // Hantera misslyckad inloggning
             alert("Fel användarnamn eller lösenord!");
         }
     } catch (error) {
         console.error("Error:", error);
-        // Hantera andra typer av fel, t.ex. nätverksfel
+        // Hantering av andra typer av fel
         alert("Ett fel uppstod. Försök igen senare.");
     }
 });
