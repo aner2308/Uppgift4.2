@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Logga in</h1>
+    <form id="loginForm">
+        <label for="username">Användarnamn:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Lösenord:</label>
+        <input type="password" id="password" name="password" required><br>
+        <button type="submit">Logga in</button>
+    </form>
+    <h2>Skapa konto</h2>
+    <form id="registerForm">
+        <input type="text" id="username2" placeholder="Användarnamn" required>
+        <input type="password" id="password2" placeholder="Lösenord" required>
+        <button type="submit">Registrera</button>
+    </form>
+
+    <script src="/src/js/login.js"></script>
+</body>
+</html>

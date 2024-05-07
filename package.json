@@ -1,0 +1,15 @@
+{
+  "name": "uppgift4.2.1",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Anton Eriksson",
+  "license": "ISC",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel src/index.html src/login.html src/inloggad.html",
+    "build": "parcel build src/index.html src/login.html src/inloggad.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
