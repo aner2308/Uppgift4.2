@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesheet.css">
     <title>Mina sidor</title>
     <script src="js/jobb.js" type="module"></script>
 </head>
 <body>
+    <header>
+        <div class="header">
+            <a href="index.html" class="logotyp"><img src="img/Leafy.svg" alt="logotyp"></a>
+            <div class="header-right">
+                <a class="notActive link" href="index.html">Startsidan</a>
+                <a href="jobbsida.html" class="active link">Jobbsidan</a>
+                <a href="login.html" id="logIn" class="notActive link">Logga in</a>
+                <a href="login.html" id="logOut" class="notActive link">Logga ut</a>
+            </div>
+        </div>
+    </header>
     <main>
         <h1>Jobbsidan</h1>
         <p class="brödtext">Välkommen till jobbsidan! Här hittar du Antons registrerade jobberfarenheter.</p>
-        <p class="brödtext" id="logInText">Logga in för att ta del av informationen.</p>
         <div id="workexperienceContainer"></div>
     </main>  
 </body>

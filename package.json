@@ -4,7 +4,7 @@
   "description": "",
   "author": "Anton Eriksson",
   "license": "ISC",
-  "source": "src/inloggad.html",
+  "source": "src/index.html",
   "scripts": {
     "start": "parcel",
     "build": "parcel build src/index.html src/login.html"

@@ -1,3 +1,17 @@
+"use strict";
+
+const logOutBtn = document.getElementById("logOut");
+const logInBtn = document.getElementById("logIn");
+const jobbsida = document.getElementById("jobbsida");
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    logOutBtn.style.display = "none";
+    logInBtn.style.display = "block"
+    jobbsida.style.display = "none";
+
+});
+
 document.getElementById("loginForm").addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -20,7 +34,12 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
             const token = data.response.token;
             console.log(token);
             localStorage.setItem("token", token);
-            window.location.href = "index.html";
+
+            // Hämta refererande sidan från header eller sessionStorage om den finns
+            const referer = sessionStorage.getItem("referer") || document.referrer;
+
+            // Om det finns en refererande sida, gå tillbaka dit, annars till index.html
+            window.location.href = referer || "index.html";
         } else {
             // Hantera misslyckad inloggning
             alert("Fel användarnamn eller lösenord!");
@@ -75,12 +94,28 @@ async function newUser(usernameEl, passwordEl) {
         body: JSON.stringify(user)
     });
 
+    //Validera input
+    if (!usernameEl || !passwordEl) {
+        return alert("Felaktig inmatning, skriv in användarnamn och lösenord...");
+    }
+
+    //Kontrollerar användarnamnets längd
+    if (usernameEl.length < 5) {
+        return alert("Användarnamnet måste vara minst fem tecken långt." );
+    }
+
+    //Kontrollerar att lösenordet har minst en stor bokstav, minst en siffra och minst sex tecken långt
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+    if (!passwordRegex.test(passwordEl)) {
+        return alert("Lösenordet måste innehålla minst en stor bokstav, minst en siffra och vara minst sex tecken långt.");
+    }
+
     if (response.ok) {
         // Visa meddelande om lyckad registrering
         document.getElementById("registrationMessage").style.display = "block";
     } else {
         // Hantera misslyckad registrering
-        alert("Något gick fel!");
+        alert("Användarnamnet är upptaget!");
     }
 
 

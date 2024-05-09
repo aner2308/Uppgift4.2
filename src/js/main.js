@@ -3,6 +3,7 @@
 const logOutBtn = document.getElementById("logOut");
 const logInBtn = document.getElementById("logIn");
 const logInMsg = document.getElementById("inloggad");
+const jobbsida = document.getElementById("jobbsida");
 
 document.addEventListener("DOMContentLoaded", () => {
     const token = localStorage.getItem("token");
@@ -10,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (token) {
         // 
         logInMsg.style.display = "block";
+
+        jobbsida.style.display = "block";
 
         logOutBtn.style.display = "block";
         logOutBtn.addEventListener("click", logOutUser);
@@ -20,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         logInMsg.style.display = "none";
         logOutBtn.style.display = "none";
         logInBtn.style.display = "block";
+        jobbsida.style.display = "none";
     }
 
 });

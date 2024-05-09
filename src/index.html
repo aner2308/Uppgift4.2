@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startsidan</title> 
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Startsidan</title>
     <script src="js/main.js" type="module"></script>
 </head>
+
 <body>
-    <h1>Startsidan</h1>
-    <h2 id="inloggad">Du är inloggad!</h2> 
+    <header>
+        <div class="header">
+            <a href="index.html" class="logotyp"><img src="img/Leafy.svg" alt="logotyp"></a>
+            <div class="header-right">
+                <a class="active link" href="index.html">Startsidan</a>
+                <a href="jobbsida.html" id="jobbsida" class="notActive link">Jobbsidan</a>
+                <a href="login.html" id="logIn" class="notActive link">Logga in</a>
+                <a href="login.html" id="logOut" class="notActive link">Logga ut</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Startsidan</h1>
+        <h2 id="inloggad">Du är inloggad!</h2>
 
-    <a href="login.html" id="logIn">Logga in</a>
-    <a href="jobbsida.html">Jobbsidan</a>
-    <a href="index.html">Startsidan</a>
 
+        <h2>Välkommen till startsidan!</h2>
+        <p class="brödtext">Denna webbplats är skapad till uppgift 4 i kurs DT207G, backend-baserad webbutveckling. Den
+            är skapad som ett första försök till en inloggningstjänst.</p>
+        <p class="brödtext">Användaren får efter inloggning tillgång till mer
+            innehåll på webbsidan än om man ej är inloggad. Detta görs med hjälp av JWT token som sparas i LocalStorage.
+            Användarens lösenord blir också krypterat/hashat vid lagring i databasen för att öka säkerheten. Databasen
+            är en MongoDB-databas, som är av typen NoSQL.</p>
+        <p class="brödtext">Navigera till inloggningssidan och skapa ett konto. När detta är klart kan du logga in och
+            ta del av informationen på jobbsidan. Lycka till!</p>
+    </main>
 
-    <button id="logOut">Logga ut</button>
-
-    <h2>Välkommen till startsidan!</h2>
-
-   
 </body>
+
 </html>

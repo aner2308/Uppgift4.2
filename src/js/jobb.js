@@ -1,9 +1,28 @@
 "use strict";
 
+const token = localStorage.getItem("token");
+const logInBtn = document.getElementById("logIn");
+
 document.addEventListener("DOMContentLoaded", () => {
+
+    if (!token) {
+        window.location.href = "index.html";
+    }
+
+    logInBtn.style.display = "none";
+
     getData();
 });
 
+function logOutUser() {
+    // Ta bort token från localStorage
+    localStorage.removeItem("token");
+
+    // Återgå till startsidan
+    location.reload();
+}
+
+//Hämtar in data från databasen
 async function getData() {
     const url = "https://nodejs-uppgift4-1.onrender.com/api/skyddad";
     const token = localStorage.getItem("token");

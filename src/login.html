@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesheet.css">
     <title>Login</title>
     <script src="js/login.js" type="module"></script>
 </head>
+
 <body>
-    <a href="jobbsida.html">Jobbsidan</a>
-    <h2>Logga in</h2>
-    <form id="loginForm">
-        <label for="username">Användarnamn:</label>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Lösenord:</label>
-        <input type="password" id="password" name="password" required><br>
-        <button type="submit">Logga in</button>
-    </form>
-    <h2>Skapa konto</h2>
-    <form id="registerForm">
-        <label for="username2">Användarnamn:</label>
-        <input type="text" id="username2" name="username2" required><br>
-        <label for="password2">Lösenord:</label>
-        <input type="password" id="password2" name="password2" required><br>
-        <button type="submit">Skapa konto</button>
-    </form>
+    <header>
+        <div class="header">
+            <a href="index.html" class="logotyp"><img src="img/Leafy.svg" alt="logotyp"></a>
+            <div class="header-right">
+                <a class="notActive link" href="index.html">Startsidan</a>
+                <a href="jobbsida.html" id="jobbsida" class="notActive link">Jobbsidan</a>
+                <a href="login.html" id="logIn" class="active link">Logga in</a>
+                <a href="login.html" id="logOut" class="notActive link">Logga ut</a>
+            </div>
+        </div>
+    </header>
 
-    <h2 id="registrationMessage" style="display: none;">Ditt konto har skapats! Vänligen logga in med dina nya uppgifter för att fortsätta.</h2>
+    <main>
+        
+        <form id="loginForm">
+            <h2>Logga in</h2>
+            <label for="username">Användarnamn:</label>
+            <br>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <br>
+            <label for="password">Lösenord:</label>
+            <br>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <br>
+            <button type="submit" class="submitBtn">Logga in</button>
+        </form>
+        
+        <form id="registerForm">
+            <h2>Skapa konto</h2>
+            <p>*Minst 6 tecken långt.</p>
+            <label for="username2">Användarnamn:</label>
+            <br>
+            <input type="text" id="username2" name="username2" required>
+            <br><br>
+            <p>*Minst 6 tecken, varav en stor bokstav och en siffra.</p>
+            <label for="password2">Lösenord:</label>
+            <br>
+            <input type="password" id="password2" name="password2" required>
+            <br><br>
+            <button type="submit" class="submitBtn">Skapa konto</button>
+        </form>
+
+        <h2 id="registrationMessage" style="display: none;">Ditt konto har skapats! Vänligen logga in med dina nya
+            uppgifter för att fortsätta.</h2>
+    </main>
 
 
-    
+
 </body>
+
 </html>
