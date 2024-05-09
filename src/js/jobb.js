@@ -1,10 +1,10 @@
+"use strict";
+
 document.addEventListener("DOMContentLoaded", () => {
     getData();
 });
 
 async function getData() {
-
-    console.log("hej");
     const url = "https://nodejs-uppgift4-1.onrender.com/api/skyddad";
     const token = localStorage.getItem("token");
 

@@ -7,7 +7,7 @@
   "source": "src/inloggad.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build src/index.html src/login.html src/inloggad.html"
+    "build": "parcel build src/index.html src/login.html"
   },
   "devDependencies": {
     "parcel": "^2.12.0"

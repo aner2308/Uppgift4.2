@@ -20,7 +20,7 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
             const token = data.response.token;
             console.log(token);
             localStorage.setItem("token", token);
-            window.location.href = "inloggad.html";
+            window.location.href = "index.html";
         } else {
             // Hantera misslyckad inloggning
             alert("Fel användarnamn eller lösenord!");
